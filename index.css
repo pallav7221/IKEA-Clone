@@ -64,5 +64,24 @@ hr{
 #topCards>div>div>img{
     width: 100%;
 }
+#offerCard{
+    display: flex;
+    background-color: lightgrey;
+}
+#offerCard>div:nth-child(2){
+    margin-right: 5%;
+}
+#offerCard>div>img{
+    width:95%;
+}
+#festCard{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2%;
+    cursor: pointer;
+}
+#festCard>div>img{
+width: 100%;
+}
 
 
