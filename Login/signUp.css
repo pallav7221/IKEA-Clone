@@ -1,0 +1,99 @@
+body{
+    margin: auto 90px auto 90px;
+    font-family:'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif !important;;
+}
+
+
+#main_div>#top_bar{
+    background-color:#0058A3;
+    color:white;
+    padding: 16px;
+}
+#Content_section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    
+}
+#family_info{
+    width:60%;
+    padding: 10px;
+
+}
+#profile_pictures{
+    display: grid;
+    grid-template-columns:200px 200px;
+    grid-template-rows: auto;
+    gap:10px;
+    margin-top: 50px;;
+    
+}
+
+#png1>img{
+    width:200px;
+    height:250px;
+    border-radius: 3px;
+}
+#png2>img{
+    width:200px;
+    height:200px;
+    border-radius: 3px;
+}
+#png3>img{
+    margin-top: -5px;
+    width:200px;
+    height:250px;
+    border-radius: 3px;
+}
+#png4>img{
+    margin-top: -55px;
+    width:200px;
+    height:200px;
+    border-radius: 3px;
+}
+#png5>img{
+    margin-top: -5px;
+    width:200px;
+    height:200px;
+    border-radius: 3px;
+}
+#png6>img{
+    margin-top: -105px;
+    width:200px;
+    height:250px;
+    border-radius: 3px;
+}
+#png7>img{
+    margin-top: -5px;
+    width:200px;
+    height:260px;
+    border-radius: 3px;
+}
+#png8>img{
+    margin-top:-55px;
+    width:200px;
+    height:200px;
+    border-radius: 3px;
+}
+#png9>img{
+    margin-top: -115px;
+    width:200px;
+    height:250px;
+    border-radius: 3px;
+}
+#create_account{
+    margin-top: 70px;
+}
+.instruction{
+    display: flex;
+    flex-direction: column;
+    /* padding:30px; */
+    row-gap: 35px;
+}
+
+#selection_type_account>input,label{
+    font-size: 15px;;
+}
+#last_instruction{
+    margin-left: -8px;
+}
