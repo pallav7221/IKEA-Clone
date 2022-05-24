@@ -83,5 +83,16 @@ hr{
 #festCard>div>img{
 width: 100%;
 }
+#returnP{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: space-around;
+    text-align: center;
+    gap: 0.1%;
+    padding: 4%;
+}
+#returnP>div{
+    background-color: #F5F5F5;
+}
 
 
