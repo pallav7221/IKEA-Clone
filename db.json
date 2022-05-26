@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "surname": "Dommara",
+      "number": "8498066494",
+      "birthaday": "1999-05-07",
+      "gender": "Male",
+      "postalCode": "515001",
+      "preferedStore": "Hyderabad",
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "surname": "venky",
+      "number": "8498066494",
+      "birthaday": "1999-05-07",
+      "gender": "Male",
+      "postalCode": "515001",
+      "preferedStore": "Hyderabad",
+      "email": "test@gmail.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "surname": "vadde",
+      "number": "1234567890",
+      "birthaday": "2022-05-15",
+      "gender": "Female",
+      "postalCode": "515001",
+      "preferedStore": "Online",
+      "email": "agrud422@gmail.com",
+      "password": "12345678",
+      "id": 3
+    }
+    
+  ]
+}

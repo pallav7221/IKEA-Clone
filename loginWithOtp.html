@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgotPassword</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="./login.css">
+        <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+</head>
+<style>
+
+body{
+    margin: 0%;
+    font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif !important;
+}
+        #text_center>h1::before{
+            color:rgb(251, 217, 20);
+            content: "Enter";
+            
+        }
+        #text_right{
+            display: flex;
+            flex-direction: column;
+            gap:150px;
+        }
+        #right_side{
+            margin: auto;
+            margin-left: 0%;
+        }
+        #error_text{
+            color:red;
+            font-size: 13px;
+            position: absolute;
+            
+        }
+        .digit-group {
+            margin: auto;
+            margin-top: 20px;
+            /* margin-left: 18%; */
+        }
+        .digit-group input
+         {
+        position: relative;
+		width: 50px;
+		height: 50px;
+		border: none;
+        border-radius: 4px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 24px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 200;
+		color: rgb(12, 12, 12);
+		margin: 0 8px;
+        /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+        border: 1px solid #929292;
+       
+        
+    }
+    .digit-group input:focus{
+        
+        border:2px solid rgb(0, 88, 163);
+    }
+
+	.splitter {
+		padding: 0 5px;
+		color: rgba(12, 12, 12, 0.895);
+		font-size: 24px;
+	}
+    #generateOtp{
+        float: right;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold 100 !important;
+        text-decoration: underline !important;
+    }
+
+    #login_signin{
+        float: left;
+        position: relative;
+        top:20px;
+        font-size: 16px;
+       
+        
+    }
+    /* #svg-icon {
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    vertical-align: middle;
+    fill: currentColor;
+    -webkit-transition-property: fill,-webkit-transform;
+    transition-property: fill,-webkit-transform;
+    transition-property: transform,fill;
+    transition-property: transform,fill,-webkit-transform;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.4,1);
+    transition-timing-function: cubic-bezier(.4,0,.4,1);
+} */
+</style>
+<body>
+    <div id="main_div">
+        <!-- Left page in main page  -->
+        <div id="left_side">
+            <div id="back">
+                <!-- Back arrorw and IKEA logo -->
+                <a href="./login.html"><img src="https://www.zippyyum.com/Content/DaPages/images/back.png"></a>
+            </div>
+
+            <div id="text_right">
+                <div><img src="https://in.accounts.ikea.com/resources/static/logo.svg" alt="Ikea logo"></div>
+
+                <!-- Center text -->
+                <div id="text_center">
+                    <h1> your PTP received from IKEA.</h1>
+                    <p>Too many passwords?</p>
+                    <p>You can now login with an OTP we will send on your email address or verified mobile number.</p>
+                    <p>Access your IKEA account using your email address to add and verify your mobile number.</p>
+                    
+                    
+                </div>
+            <!-- text bottum ie:- footer text -->
+                <div id="text_bottum">
+                <p id="speacial_align">IKEA.in -<a href="">Cookie Policy </a> and <a href="">Privacy Policy.</a></p>
+                <p>© Inter IKEA Systems B.V. 1999-2022</p> 
+                </div>
+            </div>
+        </div>
+<!-- Right side LOGIN page Part -->
+        <div id="right_side">
+            <div id="form">
+                <p>Email or verified Mobile Number</p>
+                <input type="text" id="forgot_password_request">
+                
+                <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                    <input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
+                    <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+                    <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+                    <!-- <span class="splitter">&ndash;</span> -->
+                    <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+                    <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+                    <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
+                </form>
+                
+                <span id="generateOtp">
+                    <p>Send new code</p>
+                </span>
+                <span id="login_signin">
+                    <p>Login <a href="./login.html" style=" color: #484848; ">Sign in with password</a></p>
+                </span>   
+            </div>
+            
+            <!-- <span id="error_text"></span> -->
+            
+<!-- Submit buttons -->
+            <div id="submit_button">
+                <button type="submit" onclick="forgot()">Continue</button>
+            </div>
+    </div>
+</body>
+<script type="module">
+    //import {forgot} from "./login.js"
+
+const forgot=async()=>{
+    
+        let inputValue=document.getElementById("forgot_password_request").value;
+        if(inputValue.includes("@")){
+            try {
+                var res = await fetch(`http://localhost:3005/users?email=${inputValue}`);
+                var data=await res.json();
+                var p=data[0].password;
+                alert("Your password is:"+p);
+                window.location.href="./login.html"
+            } catch(error) {
+                document.querySelector("#error_text").innerHTML="*please enter valid email or your mobile number";
+            }
+        }
+        else{
+            try {
+            var res =fetch(`http://localhost:3005/users?number=${inputValue}`);
+
+                var data= await res.json();
+                var p=data[0].password;
+                alert("Your password is:"+p);
+                window.location.href="./login.html";
+            } catch (error) {
+            
+            document.querySelector("#error_text").innerHTML="*please enter valid email or your mobile number";   }
+        }
+
+
+}
+
+
+const { Auth } = require("../node_modules/two-step-auth/index.js");
+import * as OTPAuth from 'otpauth';
+async function login(emailId) {
+const res = await Auth(emailId);
+// You can follow this approach,
+// but the second approach is suggested,
+// as the mails will be treated as important
+// const res = await Auth(emailId, "Company Name");
+console.log(res);
+console.log(res.mail);
+console.log(res.OTP);
+console.log(res.success);
+}
+
+login("agrud422@gmail.com");
+
+
+// $('.digit-group').find('input').each(function() {
+// 	$(this).attr('maxlength', 1);
+// 	$(this).on('keyup', function(e) {
+// 		var parent = $($(this).parent());
+		
+// 		if(e.keyCode === 8 || e.keyCode === 37) {
+// 			var prev = parent.find('input#' + $(this).data('previous'));
+			
+// 			if(prev.length) {
+// 				$(prev).select();
+// 			}
+// 		} else if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+// 			var next = parent.find('input#' + $(this).data('next'));
+			
+// 			if(next.length) {
+// 				$(next).select();
+// 			} else {
+// 				if(parent.data('autosubmit')) {
+// 					parent.submit();
+// 				}
+// 			}
+// 		}
+// 	});
+// });
+</script>
+</html>

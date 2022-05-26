@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./signUp.css">
+</head>
+<style>
+    
+/* input :focus {
+  border-color: rgb(9, 0, 128)
+}
+
+#input_form>#form>div label{
+    
+    
+
+} */
+/* #form>div>input:focus label{
+    font-size: 50px;
+} */
+/* #form>div input:focus>#name_lebel{
+    top: -0.10rem;
+    bottom:0.9rem;
+    font-size: 0.8rem;
+    left:0.8rem;
+    color: blue;
+} */
+/* #input_form>#form>#name_label{
+    /* margin-top: 20px; */
+/* margin-bottom:-40px;
+font-size: 10px;
+
+    
+} */
+/* #form label{
+    margin:-2px;
+} */
+/* #input_form>#form>#name_lebal:focus{
+   margin-bottom:50px;
+   font-size: 30px;
+  
+} */ */
+</style>
+
+<body>
+    <div id="main_div">
+        <div id="top_bar">
+            <h3>Join the IKEA Family club and get RS.500 off*.</h3>
+            <p>Get this linited period offer along with other benefits like huaranteed discounts, exclusive previews, food offers, free workshops & more. its free & only takes a minut. *T&C apply.</p>
+        </div>
+        <div id="Content_section">
+            <div id="family_info">
+                <h1>Create an <a>IKEA Family</a> Profile</h1>
+                <p>Already have an acount? <a href="./login.html">Login</a></p>
+
+                <div id="profile_pictures">
+                    <div id="png1"><img src="https://www.ikea.com/in/en/profile/da397fb7ef6e6d94257db1af77290435.jpg" ></div>
+                    <div id="png2"><img src="https://www.ikea.com/in/en/profile/5fdf8de127f0c602066c3aee7254c463.jpg" alt=""></div>
+                    <div id="png3"><img src="https://www.ikea.com/in/en/profile/281cff11b1bbb9d08737f5d656d7f8d6.jpg" alt="" ></div>
+                    <div id="png4"><img src="https://www.ikea.com/in/en/profile/ddc28f908192eea06190ca5bf8657069.jpg" alt="" ></div>
+                    <div id="png5"><img src="https://www.ikea.com/in/en/profile/a620cf6567e1d802e42dad2d419da1a1.jpg" alt="" ></div>
+                    <div id="png6"><img src="https://www.ikea.com/in/en/profile/471c4b31a982119d5ad6018388835e64.jpg" alt="" ></div>
+                    <div id="png7"><img src="https://www.ikea.com/in/en/profile/558de95264a0f9501533593ab355259e.jpg" alt="" ></div>
+                    <div id="png8"><img src="	https://www.ikea.com/in/en/profile/3e48e8734c5c5751bd6b21045258bfac.jpg"alt="" ></div>
+                    <div></div>
+                    <div id="png9"><img src="https://www.ikea.com/in/en/profile/6c9a5b763c764348260c1831ee856f56.jpg" alt="" ></div>
+                </div>
+            </div>
+
+            <div id="create_account">
+                <div class="instruction">
+                    <div> <b>Become a member of IKEA Family today. Did we mention it's free to join?</b></div>
+                   
+                    <div>
+                        <input type="radio" id="family_acount" name="" value="family" style="height:25px; width:25px; vertical-align: middle;">
+                         <label for="family_acount">Yes, I want to enjoy Rs.500 off* & other benefits.<a href="">Get the details</a>.</label><br>
+                        <span id="name" class="text-danger font-weight-bold"></span>
+                
+                    </div>
+
+                    <div id="last_instruction">
+                          <input type="radio" id="personal_acount" name="" value="personal" style="height:25px; width:25px; vertical-align: middle;">
+                          <label for="personal_acount">No thanks, I just want to create an IKEA account today. Maybe another day.<a href="">Get the details</a></label><br>
+                        <span id="name" class="text-danger font-weight-bold"></span>
+                    </div>
+              
+                </div>
+                    <div id="input_form">
+                        <form id="form">
+                            <div class="relative">
+                                <input type="text" autocomplete="off" id="first_name" placeholder="" required>
+                                <label for="first_name" id="name_label">First Name</label>
+                                <span id="username" class="text-danger"></span>
+                                
+                            </div>
+                            <div class="relative">
+                                <input type="text" autocomplete="off" id="surname" placeholder="" required>
+                                <label for="surname" id="surname_label">Surname</label>
+                                <span id="surname_text" class="text-danger"></span>
+                            </div>
+                            <div id="indian_number" style="width:90%" >
+                                <div style="margin-bottom:-40px"><p>IN(+91)</p></div>
+                                
+                                <input  type="text" id="number" autocomplete="off" required>
+                            
+                                <label for="number" id="number_label">MobileNumber</label>
+                                <span id="number_text" class="text-danger "></span>
+
+                            </div>
+                            <div class="relative">
+                                <input  type="text" id="birthaday" autocomplete="off" required>
+                                <label for="birthaday" id="birthaday_label">Birthaday</label>
+                                <span id="birthaday_text" class="text-danger "></span>
+                            </div>
+                    
+                        
+                            <div id="select_tag" style="width:60%">
+                                <select id="gender" required> 
+                                    
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <label for="gender" id="gender_label">Gender</label>
+                                <span id="gender_text" class="text-danger "></span>
+                            </div>
+                            <div class="relative" style="width:60%" autocomplete="off">
+                                <input  type="text" id="postal" required>
+                                <label for="postal" id="postal_label">Post code</label>
+                                <span id="postal_text" class="text-danger"></span>
+                            </div>
+                        
+                            <div id="select_tag" style="width:60%">
+                                <select id="prefered_store" required>
+                                    <option value="Hyderabad">Hyderabad</option>
+                                    <option value="Navi">Navi Mumbai Store</option>
+                                    <option value="Online">Online store</option>
+                                    <option value="Worli">Worli</option>
+                                </select>
+                                
+                                <label for="prefered_store" id="postal_label">Prefered store</label>
+                                <span id="prefered_store_text" class="text-danger"></span>
+                            </div>
+                            <div class="relative">
+                                <input  type="email" id="email" required >
+                                <label for="email" id="email_label">Email</label>
+                                <span id="email_text" class="text-danger"></span>
+                            </div>
+                    
+                            <div class="relative" id="password_div"  style="width:60%">
+                                <input  type="password" id="password" autocomplete="off"><i class="far fa-eye" id="togglePassword" style="margin-left: 5px; cursor: pointer; float:right " required></i></input >
+                                
+                                <label for="password" id="password_label" required>Password</label>
+                                <span id="password_text" class="text-danger"></span>
+                    
+                            </div>
+                    
+                            <div class="terms_and_condtions">
+                                <input  id="main_checkbox" type="checkbox" />
+                                <label for="main_checkbox"> I would like to receive news, tips and marketing offers from IKEA.</label>
+                                <div>
+                                    <input  id="email_checkbox" type="checkbox" />
+                                <label for="email_checkbox">Via email</label>
+                                </div>
+                                <div>
+                                    <input  id="sms_checkbox" type="checkbox" />
+                                <label for="sms_checkbox">Via SMS </label>
+                                </div>
+                                <div >
+                                    <input  id="mail_checkbox" type="checkbox" />
+                                <label for="mail_checkbox">Via direct mail</label>
+                                </div>
+                                <div id="terms">
+                                    <input  id="terms_checkbox" type="checkbox" />
+                                    
+                                    <label for="terms_checkbox">I have read and understood the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></a></label>
+                                    
+                                
+                                </div>
+                                <div id="submit_button">
+                                    <button type="submit" id="submitted" onclick="register()" >Continue</button>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+                    </div>
+            
+            </div>
+    </div>
+</body>
+<script src="./signUp.js">
+
+
+
+</script>
+
+</html>
