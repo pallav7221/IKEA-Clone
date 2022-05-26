@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Deen shah",
+      "surName": "Sai",
+      "mobile": 8708730331,
+      "birthDate": "01-10-1936",
+      "preStore": "Leda khadar",
+      "email": "deenshahscion@gmail.com",
+      "password": "12345",
+      "cart": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "firstName": "Naseeb",
+      "surName": "khan",
+      "mobile": "08708730331",
+      "birthDate": "",
+      "preStore": "",
+      "email": "1@gmal.com",
+      "password": "12345678",
+      "id": 5
+    },
+    {
+      "firstName": "naseeb",
+      "surName": "",
+      "mobile": "1234567890",
+      "birthDate": "",
+      "preStore": "",
+      "email": "1@gmal.com",
+      "password": "1234567890",
+      "id": 6
+    },
+    {
+      "firstName": "naseeb khan",
+      "surName": "",
+      "mobile": "98123456789",
+      "birthDate": "",
+      "preStore": "ajaj",
+      "email": "1@gmal.com",
+      "password": "12345678",
+      "id": 7
+    },
+    {
+      "firstName": "dn",
+      "surName": "S",
+      "mobile": 870331,
+      "birthDate": "01-10-1936",
+      "preStore": "Leda khadar",
+      "email": "deen@gmail.com",
+      "password": "12345",
+      "id": 8
+    }
+  ]
+}
