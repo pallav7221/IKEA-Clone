@@ -54,6 +54,39 @@
       "email": "test3@gmail.com",
       "password": "123456",
       "id": 5
+    },
+    {
+      "surname": "gdfg",
+      "number": "5645675677",
+      "birthaday": "2022-05-03",
+      "gender": "Male",
+      "postalCode": "63637",
+      "preferedStore": "Hyderabad",
+      "email": "dommara_pw2_130@masai.school",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "surname": "fghfdgh",
+      "number": "6546456777",
+      "birthaday": "2022-06-01",
+      "gender": "Male",
+      "postalCode": "53453",
+      "preferedStore": "Hyderabad",
+      "email": "test7@gmail.com",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "surname": "hari",
+      "number": "1234567890",
+      "birthaday": "2022-05-18",
+      "gender": "Female",
+      "postalCode": "515001",
+      "preferedStore": "Hyderabad",
+      "email": "test10@gmail.com",
+      "password": "123456",
+      "id": 8
     }
   ]
 }
