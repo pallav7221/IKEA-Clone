@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<style>
+    #a,.a{
+        margin-left: 5%;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    #aa{
+        background-color: yellow;
+        padding: 5%;
+        width: 25%
+    }
+    #ab{
+        width: 65%;
+    }
+    #ab>img{
+        width: 100%;
+    }
+    #shopBY{
+        height: 35px;
+        background-color: black;
+        color:white;
+        border-radius: 15px 15px 15px 15px;
+    }
+    .b{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 5%;
+
+    }
+    .b>div{
+        width: 45%;
+        margin: 2%;
+    }
+    .b>div>img{
+        width: 100%;
+        height: 90%;
+    }
+    #slide>div{
+        width: 100%;
+        height:200px;
+        background-color: yellow;
+
+    }
+    #left{
+        margin-top: -100px;
+    position: absolute;
+        background-color:red;
+        color:white;
+    }
+    #right{
+        margin-top: -100px;
+        margin-left: 98%;
+    position: absolute;
+        background-color:red;
+        color:white;
+    }
+</style>
+<body>
+    <h1 class="a">Our Lowest price</h1>
+    <div id="a"> <div id="ab">
+
+        <img src="https://www.ikea.com/images/11/b8/11b8ccb82cc4c8719d8818d4ea24602a.png?f=m" alt="">
+    </div>
+    <div id="aa">
+<h1>As simple as that</h1>
+<p>We think that everyone should be able to afford good home furnishings. When we design a product, we first create the price tag. This means that we always try to find the best materials and avoid waste during production. As simple as that
+
+</p>
+<button id="shopBY"><strong>Shop by catagories</strong></button>
+    </div>
+    </div>
+
+
+
+    <h1 class="a">Storage and organisation
+    </h1>
+    <div class="b">
+        <div><img src="https://www.ikea.com/ext/ingkadam/m/488c739dcaa9185e/original/PH177262-crop001.jpg?f=m" alt=""></div>
+    <div><img src="https://www.ikea.com/ext/ingkadam/m/5a13dd680369f267/original/PH160919-crop001.jpg?f=m" alt=""></div>
+    </div>
+    <!-- coursoul -->
+    <div id="slide">
+        <div style="background-color:blue;" class="slide"></div>
+        <div style="background-color:pink;" class="slide"></div>
+        <div style="background-color: green;" class="slide"></div>
+      
+  <div style="background-color: black" class="slide"></div>
+  <button onclick="slide()" id="left">--</button>
+  <button onclick="slide()" id="right">++</button>
+
+    </div>
+</body>
+<script>
+    getproducts()
+    async function getproducts(){
+try{
+  await fetch('http://localhost:3000/slideproducts')
+.then((x) =>x.json())
+.then((x) =>console.log(x))
+
+
+}
+catch(e){
+    console.log(e)
+}
+    }
+    var slideindex=0
+    var allslide= document.querySelectorAll('.slide')
+    div=document.createElement('h1')
+    div.innerHTML=`deenshahscion`
+    allslide[2].append(div)
+    function slide(){
+    allslide.forEach((x)=>{
+        x.style.display='none'
+    })
+    allslide[slideindex].style.display='block'
+    slideindex++
+    if(slideindex==allslide.length){
+        slideindex=0
+    }
+    }
+</script>
+</html>
