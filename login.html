@@ -42,22 +42,23 @@
         <div id="right_side">
             <div id="form">
                 <p>Email or verified Mobile Number</p>
-                <input type="text" id="username">
-                <p>Login <a href="./loginWithOtp.html">with an OTP</a></p>
+                <input type="text" id="email_or_number">
+                <span id="email_or_number_text" class="text-danger"></span>
+                <p id="hint_text">Login <a href="./loginWithOtp.html">with an OTP</a></p>
             </div>
             <div id="form">
                 <p>Password</p>
                 
                 <input type="password" id="id_password">
-                <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer; float:center"></i>
+                <i class="far fa-eye" id="togglePassword" style="cursor: pointer;"></i>
                 </input>
-        
-                <p><a href="./forgotPassword.html">Forgot your password?</a></p>
+                <span id="id_password_text" class="text-danger"></span>
+                <p id="hint_text"><a href="./forgotPassword.html">Forgot your password?</a></p>
 
             </div>
 <!-- Submit buttons -->
             <div id="submit_button">
-                <button type="submit" onclick="login()">Continue</button>
+                <button type="submit" onclick="validation()">Continue</button>
             </div>
             <div id="hint">
                 <p>Do not have an IKEA account? Create one now:</p>

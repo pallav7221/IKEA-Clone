@@ -4,87 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForgotPassword</title>
+    <title>loginWithOtp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-        <link rel="stylesheet" href="./login.css">
+        <link rel="stylesheet" href="./loginWithOtp.css">
         <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 </head>
 <style>
 
-body{
-    margin: 0%;
-    font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif !important;
-}
-        #text_center>h1::before{
-            color:rgb(251, 217, 20);
-            content: "Enter";
-            
-        }
-        #text_right{
-            display: flex;
-            flex-direction: column;
-            gap:150px;
-        }
-        #right_side{
-            margin: auto;
-            margin-left: 0%;
-        }
-        #error_text{
-            color:red;
-            font-size: 13px;
-            position: absolute;
-            
-        }
-        .digit-group {
-            margin: auto;
-            margin-top: 20px;
-            /* margin-left: 18%; */
-        }
-        .digit-group input
-         {
-        position: relative;
-		width: 50px;
-		height: 50px;
-		border: none;
-        border-radius: 4px;
-		line-height: 50px;
-		text-align: center;
-		font-size: 24px;
-		font-family: 'Raleway', sans-serif;
-		font-weight: 200;
-		color: rgb(12, 12, 12);
-		margin: 0 8px;
-        /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
-        border: 1px solid #929292;
-       
-        
-    }
-    .digit-group input:focus{
-        
-        border:2px solid rgb(0, 88, 163);
-    }
 
-	.splitter {
-		padding: 0 5px;
-		color: rgba(12, 12, 12, 0.895);
-		font-size: 24px;
-	}
-    #generateOtp{
-        float: right;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold 100 !important;
-        text-decoration: underline !important;
-    }
-
-    #login_signin{
-        float: left;
-        position: relative;
-        top:20px;
-        font-size: 16px;
-       
-        
-    }
     /* #svg-icon {
     display: inline-block;
     height: 1.5rem;
@@ -115,7 +42,7 @@ body{
 
                 <!-- Center text -->
                 <div id="text_center">
-                    <h1> your PTP received from IKEA.</h1>
+                    <h1> your OTP received from IKEA.</h1>
                     <p>Too many passwords?</p>
                     <p>You can now login with an OTP we will send on your email address or verified mobile number.</p>
                     <p>Access your IKEA account using your email address to add and verify your mobile number.</p>
@@ -123,7 +50,7 @@ body{
                     
                 </div>
             <!-- text bottum ie:- footer text -->
-                <div id="text_bottum">
+            <div id="text_bottum">
                 <p id="speacial_align">IKEA.in -<a href="">Cookie Policy </a> and <a href="">Privacy Policy.</a></p>
                 <p>© Inter IKEA Systems B.V. 1999-2022</p> 
                 </div>
@@ -134,7 +61,7 @@ body{
             <div id="form">
                 <p>Email or verified Mobile Number</p>
                 <input type="text" id="forgot_password_request">
-                
+                <div style="display:inline">
                 <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
                     <input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
                     <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
@@ -144,7 +71,7 @@ body{
                     <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
                     <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
                 </form>
-                
+            </div>
                 <span id="generateOtp">
                     <p>Send new code</p>
                 </span>
@@ -159,9 +86,10 @@ body{
             <div id="submit_button">
                 <button type="submit" onclick="forgot()">Continue</button>
             </div>
+           
     </div>
 </body>
-<script type="module">
+<script src="./node_modules/two-step-auth/">
     //import {forgot} from "./login.js"
 
 const forgot=async()=>{
@@ -195,8 +123,8 @@ const forgot=async()=>{
 }
 
 
-const { Auth } = require("../node_modules/two-step-auth/index.js");
-import * as OTPAuth from 'otpauth';
+
+
 async function login(emailId) {
 const res = await Auth(emailId);
 // You can follow this approach,
@@ -236,5 +164,8 @@ login("agrud422@gmail.com");
 // 		}
 // 	});
 // });
+
+
+
 </script>
 </html>

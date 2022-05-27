@@ -9,6 +9,32 @@ const togglePassword = document.querySelector('#togglePassword');
     this.classList.toggle('fa-eye-slash');
 });
 
+
+function validation(){
+  let email=document.getElementById('email_or_number').value;
+  let password=document.getElementById('id_password').value;
+
+
+  let email_validation=email.includes("@");
+      if(email_validation){
+        
+      }else{
+        document.getElementById('email_or_number_text').innerHTML=" * please enter email field";
+        return false;
+      }
+
+      if(password.length===6){
+        
+      }else{
+        document.getElementById('id_password_text').innerHTML=" * please enter password field";
+        return false;
+      }
+
+      login();
+}
+
+
+
 const login=async()=>{
     try {
       

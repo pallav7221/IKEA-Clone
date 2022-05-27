@@ -148,13 +148,13 @@ width: 100%;
 top: -4px
 } 
 /* input focus text isue */ 
-.relative input:valid + label
+.relative input:valid +label
 {
 color: black;
 pointer-events: all; 
 font-size: 13px;
  top: -30px; 
-;
+
 position: relative;
 
 transition: all.2s ease-in-out;
@@ -258,9 +258,11 @@ transform-origin: top left;
 }
 #submit_button{
 margin-top: 50px;
+width:450px;
 }
+
 #submit_button>button{
-    width: 440px;
+    width: 100%;
     border: 1px solid #111;
     font-size:20px;
     height: 3.5rem;
@@ -294,3 +296,93 @@ top:20px;
 text-align: left;
 left: -70px;
 }
+
+#togglePassword{
+    position: relative;
+    left:80%;
+    
+    
+}
+
+@media all and (min-width:100px) and (max-width:450px) {
+    body{
+        margin: auto 5% auto 5%;
+        font-family:'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif !important;;
+        font-size: 16px;
+    }
+    #main_div>#top_bar{
+        background-color:#0058A3;
+        color:white;
+       
+    }
+    #Content_section{
+        display: grid;
+        grid-template-columns:  100%;
+        position: relative;
+        
+        
+    }
+    
+    #profile_pictures{
+        display: grid;
+        grid-template-columns:100%;
+        
+        
+    }
+
+    #png1>img{
+        width:100%;
+        height:100%;
+        border-radius: 3px;
+    }
+    #png2>img{
+        display: none;
+        
+    }
+    #png3>img{
+        display: none;
+        
+    }
+    #png4>img{
+        display: none;
+       
+    }
+    #png5>img{
+        display: none;
+       
+    }
+    #png6>img{
+        display: none;
+         
+    }
+    #png7>img{
+        display: none;
+       
+    }
+    #png8>img{
+        display: none;
+    }
+    #png9>img{
+        display: none;
+    }
+    #submit_button>button{
+        width: 100%;
+        border: 1px solid #111;
+        font-size:20px;
+        height: 3.5rem;
+        background: #111111;
+        color: #ffffff;
+        border-radius: 40px;
+        padding: 0 2.5rem;
+        margin-left: -80px;
+    }
+    
+}
+
+/* @media all and (min-width:450px) and (max-width:850px) {
+
+}
+
+@media all and (min-width:850px) and (max-width:450px) {
+
+} */

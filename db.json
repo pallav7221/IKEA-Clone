@@ -32,7 +32,28 @@
       "email": "agrud422@gmail.com",
       "password": "12345678",
       "id": 3
+    },
+    {
+      "surname": "dommara",
+      "number": "123456789",
+      "birthaday": "10/1/2000",
+      "gender": "Male",
+      "postalCode": "515001",
+      "preferedStore": "Worli",
+      "email": "agrud422@gmail.com",
+      "password": "123456780",
+      "id": 4
+    },
+    {
+      "surname": "gorava",
+      "number": "9642947462",
+      "birthaday": "12/1/2000",
+      "gender": "Male",
+      "postalCode": "515001",
+      "preferedStore": "Navi",
+      "email": "test3@gmail.com",
+      "password": "123456",
+      "id": 5
     }
-    
   ]
 }

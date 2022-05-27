@@ -43,10 +43,10 @@ font-size: 10px;
    margin-bottom:50px;
    font-size: 30px;
   
-} */ */
+} */ 
 </style>
 
-<body>
+<body onload="disableSubmit()">
     <div id="main_div">
         <div id="top_bar">
             <h3>Join the IKEA Family club and get RS.500 off*.</h3>
@@ -105,14 +105,14 @@ font-size: 10px;
                             <div id="indian_number" style="width:90%" >
                                 <div style="margin-bottom:-40px"><p>IN(+91)</p></div>
                                 
-                                <input  type="text" id="number" autocomplete="off" required>
+                                <input  type="number" id="number" autocomplete="off" required>
                             
                                 <label for="number" id="number_label">MobileNumber</label>
                                 <span id="number_text" class="text-danger "></span>
 
                             </div>
                             <div class="relative">
-                                <input  type="text" id="birthaday" autocomplete="off" required>
+                                <input  type="date" id="birthaday" autocomplete="off" placeholder="off" required>
                                 <label for="birthaday" id="birthaday_label">Birthaday</label>
                                 <span id="birthaday_text" class="text-danger "></span>
                             </div>
@@ -146,43 +146,44 @@ font-size: 10px;
                                 <span id="prefered_store_text" class="text-danger"></span>
                             </div>
                             <div class="relative">
-                                <input  type="email" id="email" required >
+                                <input  type="email" id="email" placeholder="" required />
                                 <label for="email" id="email_label">Email</label>
                                 <span id="email_text" class="text-danger"></span>
                             </div>
                     
                             <div class="relative" id="password_div"  style="width:60%">
-                                <input  type="password" id="password" autocomplete="off"><i class="far fa-eye" id="togglePassword" style="margin-left: 5px; cursor: pointer; float:right " required></i></input >
-                                
-                                <label for="password" id="password_label" required>Password</label>
+                                <input  type="password" id="password" autocomplete="off" placeholder="" >
+                                <label for="password" id="password_label">Password</label>
+                                <i class="far fa-eye" id="togglePassword" style=" cursor: pointer; " ></i>
+                               
                                 <span id="password_text" class="text-danger"></span>
                     
                             </div>
-                    
+                    <!-- Terms and condition -->
                             <div class="terms_and_condtions">
-                                <input  id="main_checkbox" type="checkbox" />
+                                <input  id="main_checkbox" type="checkbox" checked="true"/>
                                 <label for="main_checkbox"> I would like to receive news, tips and marketing offers from IKEA.</label>
                                 <div>
-                                    <input  id="email_checkbox" type="checkbox" />
+                                    <input   type="checkbox" id="email_checkbox" type="checkbox" checked="" />
                                 <label for="email_checkbox">Via email</label>
                                 </div>
                                 <div>
-                                    <input  id="sms_checkbox" type="checkbox" />
+                                    <input  type="checkbox" id="sms_checkbox" type="checkbox" checked=""/>
                                 <label for="sms_checkbox">Via SMS </label>
                                 </div>
                                 <div >
-                                    <input  id="mail_checkbox" type="checkbox" />
+                                    <input  type="checkbox" id="mail_checkbox" type="checkbox"checked="" />
                                 <label for="mail_checkbox">Via direct mail</label>
                                 </div>
                                 <div id="terms">
-                                    <input  id="terms_checkbox" type="checkbox" />
+                                    <input  type="checkbox" id="terms_checkbox" type="checkbox" onchange="activateButton(this)"/>
                                     
                                     <label for="terms_checkbox">I have read and understood the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></a></label>
                                     
                                 
                                 </div>
                                 <div id="submit_button">
-                                    <button type="submit" id="submitted" onclick="register()" >Continue</button>
+                                    <button type="submit" id="submit" onclick="validation()" >Continue</button>
                                 </div>
                             </div>
                             
@@ -195,7 +196,7 @@ font-size: 10px;
             </div>
     </div>
 </body>
-<script src="./signUp.js">
+<script src="./signUp.js" >
 
 
 

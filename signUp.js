@@ -44,75 +44,79 @@ togglePassword.addEventListener('click', function (e) {
 //     }
     
 
-//     function validation(){
+    function validation(){
       
-//       let user=document.getElementById('first_name').value;
-//       let surname=document.getElementById('surname').value;
-//       let birthaday=document.getElementById('birthaday').value;
-//       let gender=document.getElementById('gender').value;
-//       let postal=document.getElementById('postal').value;
-//       let prefered_store=document.getElementById('prefered_store').value;
-//       let email=document.getElementById('email').value;
-//       let password=document.getElementById('password').value;
+      let user=document.getElementById('first_name').value;
+      console.log(user.length)
+      let surname=document.getElementById('surname').value;
+      let birthaday=document.getElementById('birthaday').value;
+      let gender=document.getElementById('gender').value;
+      let postal=document.getElementById('postal').value;
+     
+      let prefered_store=document.getElementById('prefered_store').value;
+      let email=document.getElementById('email').value;
+      let password=document.getElementById('password').value;
       
       
 
 
-//       if(user===''){
-//           document.getElementById('username').innerHTML=" * please enter name field";
-//           return false;
-//       }
+      if(user.length===0){
+          document.getElementById('username').innerHTML=" * please enter name field";
+         
+        return false;
+      }
       
-//       if(surname===''){
-//           document.getElementById('surname_text').innerHTML=" * please enter username field";
-//           return false;
-//       }
+      if(surname.length==0){
+          document.getElementById('surname_text').innerHTML=" * please enter username field";
+          return false;
+      }
 
       
-//       if(birthaday===''){
-//         document.getElementById('number_text').innerHTML=" * please enter birthaday field";
-//         return false;
-//     }
+      if(birthaday.length===0){
+        document.getElementById('number_text').innerHTML=" * please enter birthaday field";
+        return false;
+    }
 
     
-//     if(gender===''){
-//       document.getElementById('gender_text').innerHTML=" * please enter username field";
-//       return false;
-//   }
+    if(gender.length===0){
+      document.getElementById('gender_text').innerHTML=" * please enter gender field";
+      return false;
+    }
 
   
-//   if(postal===''){
-//     document.getElementById('postal_text').innerHTML=" * please enter username field";
-//     return false;
-// }
+        if(postal.length<5){
+          document.getElementById('postal_text').innerHTML=" * please enter postal field";
+          return false;
+      }
 
 
-// if(prefered_store===''){
-//   document.getElementById('prefered_store_text').innerHTML=" * please enter username field";
-//   return false;
-// }
+      if(prefered_store.length===0){
+        document.getElementById('prefered_store_text').innerHTML=" * please enter prefered_store field";
+        return false;
+      }
 
+      let email_validation=email.includes("@");
+      if(email_validation){
+        
+      }else{
+        document.getElementById('email_text').innerHTML=" * please enter email field";
+        return false;
+      }
 
-// if(email===''){
-//   document.getElementById('email_text').innerHTML=" * please enter username field";
-//   return false;
-// }
+      if(password.length===6){
+        
+      }else{
+        document.getElementById('password_text').innerHTML=" * please enter password field";
+        return false;
+      }
 
-// if(password===''){
-//   document.getElementById('password_text').innerHTML=" * please enter username field";
-//   return false;
-// }
+    register();
+   
+  }
+// let valid=;
 
-// return true;
-// }
-// let valid=validation();
-//     if(valid){
-//       console.log("All filled");
-//     }else{
-//       console.log("NNOOO");
-//     }
-// var all=validation()
-//   console.log(all);
+// console.log(valid);
+
 
     const register=async()=>{
         event.preventDefault();
@@ -131,7 +135,9 @@ togglePassword.addEventListener('click', function (e) {
               };
 
               //console.log( await registrationData.email);
-              if(await check(registrationData.email)){
+              let exist_email=await check(registrationData.email);
+              //console.log(exist_email);
+              if(exist_email){
                 let res=await fetch(`http://localhost:3005/users`,{
                   method:"POST",
                   body:JSON.stringify(registrationData),
@@ -140,17 +146,20 @@ togglePassword.addEventListener('click', function (e) {
                   }
                 });
                 let data= await res.json();
-                console.log("DATA",data);
+                console.log("DATA",data.email);
+                
+                alert("Ikea account created succusfully")
+                window.location.href="./login.html";
               }else{
                 console.log(alert("CHOOSE ANOTHER EMAIL"))
               }
-
+              
       } catch (error) {
           console.log(error);
         }
       }
    
-        
+      
  
    
  
@@ -173,26 +182,39 @@ async function check(x){
     // let email=document.getElementById("forgot_password_request").value;
   
     try{
-      console.log(x);
+      //console.log(x);
       let res= await fetch(`http://localhost:3005/users?email=${x}`);
   
-      let data= res.json();
-      var f=data.email;
-      console.log(f);
-      if(f==x){
-        console.log("DID?")
+      let data= await res.json();
+      //console.log(data);
+     var f=data[0].email;
+     // console.log(f,"EMPTY");
+      if(f===x){
+        ///console.log("DID?");
         return false;
       }
-    } catch (error) {
+    }catch (error) {
       console.log(error);
       }
 
-    return true
-  
+    return true;
 }
   
 
+function disableSubmit() {
+  document.getElementById("submit").disabled = true;
+ }
 
+  function activateButton(element) {
+
+      if(element.checked) {
+        document.getElementById("submit").disabled = false;
+       }
+       else  {
+        document.getElementById("submit").disabled = true;
+      }
+
+  }
 
 
 
