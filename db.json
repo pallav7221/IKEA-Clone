@@ -1,24 +1,20 @@
 {
   "users": [
     {
+      "firstName": "Naseeb",
+      "surName": "sai",
       "id": 1,
-      "firstName": "Deen shah",
-      "surName": "Sai",
-      "mobile": 8708730331,
-      "birthDate": "01-10-1936",
-      "preStore": "Leda khadar",
-      "email": "deenshahscion@gmail.com",
-      "password": "12345",
       "cart": [
-
-
-
-
-
-        
-        1,
-        1,
-        1
+        {
+          "n": "PARKLA",
+          "rs": 179,
+          "url": "https://www.ikea.com/in/en/images/products/paerkla-storage-case__0784919_pe761939_s5.jpg?f=xxxs"
+        },
+        {
+          "n": "SMACKER",
+          "rs": 99,
+          "url": "https://www.ikea.com/in/en/images/products/smaecker-cutlery-tray-grey__0260296_pe404014_s5.jpg?f=xxxs"
+        }
       ]
     },
     {
@@ -27,9 +23,10 @@
       "mobile": "08708730331",
       "birthDate": "",
       "preStore": "",
-      "email": "1@gmal.com",
+      "email": "1com",
       "password": "12345678",
-      "id": 5
+      "id": 5,
+      "x": {}
     },
     {
       "firstName": "naseeb",
@@ -62,69 +59,62 @@
       "id": 8
     }
   ],
-  "slideproducts":[
+  "slideproducts": [
     {
-      "id":1,
-      "n":"BASTIS",
-      "rs":99
-      ,
-      "in":"lint roller",
-      "url":"https://www.ikea.com/in/en/images/products/murvel-shoe-organiser-grey__1090662_pe862131_s5.jpg?f=xxxs"
-    }
-    ,{
-      "id":2,
-      "n":"MURVEL",
-      "rs":99
-      ,
-      "in":"Shoe organoser",
-      "url":"https://www.ikea.com/in/en/images/products/baestis-lint-roller-grey__0910870_pe708844_s5.jpg?f=xxxshttps://www.ikea.com/in/en/images/products/baestis-lint-roller-grey__0910870_pe708844_s5.jpg?f=xxxs"
-    }
-    ,{
-      "id":3,
-      "n":"PARKLA",
-      "rs":179
-      ,
-      "in":"Storge case"
-    ,"url":"https://www.ikea.com/in/en/images/products/paerkla-storage-case__0784919_pe761939_s5.jpg?f=xxxs"
-    },{
-      "id":4,
-      "n":"NOJIG",
-      "rs":99
-      ,
-      "in":"lint roller"
-    ,"url":"https://www.ikea.com/in/en/images/products/nojig-organiser-plastic-beige__0954109_pe804512_s5.jpg?f=xxxs"
+      "id": 1,
+      "n": "BASTIS",
+      "rs": 99,
+      "in": "lint roller",
+      "url": "https://www.ikea.com/in/en/images/products/murvel-shoe-organiser-grey__1090662_pe862131_s5.jpg?f=xxxs"
     },
     {
-      "id":5,
-      "n":"HYLLIS",
-      "rs":99
-      ,
-      "in":"Shelving unit",
-      "url":"https://www.ikea.com/in/en/images/products/hyllis-shelving-unit-in-outdoor__0911686_pe711418_s5.jpg?f=xxxs"
+      "id": 2,
+      "n": "MURVEL",
+      "rs": 99,
+      "in": "Shoe organoser",
+      "url": "https://www.ikea.com/in/en/images/products/baestis-lint-roller-grey__0910870_pe708844_s5.jpg?f=xxxshttps://www.ikea.com/in/en/images/products/baestis-lint-roller-grey__0910870_pe708844_s5.jpg?f=xxxs"
+    },
+    {
+      "id": 3,
+      "n": "PARKLA",
+      "rs": 179,
+      "in": "Storge case",
+      "url": "https://www.ikea.com/in/en/images/products/paerkla-storage-case__0784919_pe761939_s5.jpg?f=xxxs"
+    },
+    {
+      "id": 4,
+      "n": "NOJIG",
+      "rs": 99,
+      "in": "lint roller",
+      "url": "https://www.ikea.com/in/en/images/products/nojig-organiser-plastic-beige__0954109_pe804512_s5.jpg?f=xxxs"
+    },
+    {
+      "id": 5,
+      "n": "HYLLIS",
+      "rs": 99,
+      "in": "Shelving unit",
+      "url": "https://www.ikea.com/in/en/images/products/hyllis-shelving-unit-in-outdoor__0911686_pe711418_s5.jpg?f=xxxs"
+    },
+    {
+      "id": 6,
+      "n": "SMACKER",
+      "rs": 99,
+      "in": "TRY",
+      "url": "https://www.ikea.com/in/en/images/products/smaecker-cutlery-tray-grey__0260296_pe404014_s5.jpg?f=xxxs"
+    },
+    {
+      "id": 7,
+      "n": "NOJIG",
+      "rs": 99,
+      "in": "lint roller",
+      "url": "https://www.ikea.com/in/en/images/products/nojig-organiser-plastic-beige__0954109_pe804512_s5.jpg?f=xxxs"
+    },
+    {
+      "id": 8,
+      "n": "HYLLIS",
+      "rs": 99,
+      "in": "Shelving unit",
+      "url": "https://www.ikea.com/in/en/images/products/hyllis-shelving-unit-in-outdoor__0911686_pe711418_s5.jpg?f=xxxs"
     }
-,{
-  "id":6,
-  "n":"SMACKER",
-  "rs":99
-  ,
-  "in":"TRY",
-  "url":"https://www.ikea.com/in/en/images/products/smaecker-cutlery-tray-grey__0260296_pe404014_s5.jpg?f=xxxs"
-},{
-  "id":7,
-  "n":"NOJIG",
-  "rs":99
-  ,
-  "in":"lint roller"
-,"url":"https://www.ikea.com/in/en/images/products/nojig-organiser-plastic-beige__0954109_pe804512_s5.jpg?f=xxxs"
-},
-{
-  "id":8,
-  "n":"HYLLIS",
-  "rs":99
-  ,
-  "in":"Shelving unit",
-  "url":"https://www.ikea.com/in/en/images/products/hyllis-shelving-unit-in-outdoor__0911686_pe711418_s5.jpg?f=xxxs"
-}
-
   ]
 }

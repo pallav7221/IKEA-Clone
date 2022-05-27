@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Verdana,sans-serif;
+    color: #333333;
+    /* font-size: 11px; */
+        }
+        #container{
+            width: 87%;
+            margin: auto;
+        }
+        #innerContainer{
+            /* width: 87%; */
+            height: 250px;
+            
+        }
+        #amount{
+           
+            width: 50%;
+            float:right;
+
+        }
+        #amount>div{
+            font-size: larger;
+            display: flex;
+            justify-content: space-between;
+
+        }
+         #amount>div>div{
+             padding-right: 10px;
+         }
+#floatRight{
+    margin-left:72%;
+    font-size: 11px;
+    line-height: 0%;
+    
+}
+#amount button , #placeOrder{
+    float: right;
+   line-height: 1.8em;
+    text-decoration: none;
+   
+    padding: 15px 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0274cb;
+    border-radius: 3px;
+    border: 0px solid #000000;
+    margin-top: 20px;
+    margin-bottom: 30px;
+     cursor: pointer;
+}
+#cartProduct{
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+#cartProduct>div{
+    display: flex;
+    
+}
+#productDetails{
+    /* width: 20%; */
+    display: flex;
+    /* line-height: 12%; */
+}
+#quantity>input{
+margin-top: 50px;
+float: left;
+    width: 58px;
+    border-radius: 0;
+    margin-right: 20px;
+    text-align: center;
+    padding: 5px;
+    
+
+}
+#quantity>span{
+    margin-top: 50px;
+}
+#productDetails img{
+    margin: 20px;
+}
+#totalPrice{
+   
+    display: flex;
+    flex-direction: column;
+}
+#displayFlex{
+     margin-top: 50px;
+    display: flex;
+    gap: 60px;
+}
+#buttonDiv{
+    margin-top: 60px;
+    margin-left: 100px;
+    
+
+}
+#removeButton{
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+#totalCartAmount{
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+
+    margin-bottom: 50px;
+   
+
+}
+#totalCartAmount>div{
+    float:right;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+#cardAccepted{
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#displayGrid{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 20px;
+}
+#displayGrid img{
+    width: 48px;
+    height: 30px;
+}
+#buttons{
+    width: 100%;
+    display: flex;
+    
+    justify-content: space-between;
+}
+#services {
+     width: 100%;
+     margin: auto;
+     display: grid;
+     gap: 30px;
+     margin-top: 20px;
+     grid-template-columns: repeat(3, 1fr);
+ }
+
+ .innerDiv {
+     display: flex;
+     border: 1px solid rgb(189, 188, 188);
+ }
+
+ .innerDiv>div>img {
+     padding: 30px;
+ }
+
+ .policyDiv>div {
+     padding: 5px;
+ }
+
+ .policyDiv a {
+     color: #0058a3;
+     ;
+     float: right;
+     padding-right: 20px;
+ }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="innerContainer">
+            <h1>
+                <strong>Your shopping cart</strong>
+            </h1>
+            <div id="amount">
+                <strong>2</strong>
+                <p style="display:inline;">products in shopping cart</p>
+                <hr>
+                <div>
+                    <div><strong>Total Amount</strong></div>
+                    <div><strong>1599</strong></div>
+                </div>
+                <p id="floatRight">All prices are inclusive of taxes</p>
+                <button>Place Order</button>
+            
+            </div>
+           
+        </div>
+        <hr>
+        <div id="cartProduct">
+            <div id="leftSide">
+                <div id="quantity">
+                    <input type="text" value="1">
+                    
+                    <span>X</span>
+                </div>
+                <div id="productDetails">
+                    <div>
+                        <img style="width: 125px; height: 125px;"
+                            src="	https://www.ikea.com/in/en/images/products/tradfri-shortcut-button-white__0988402_pe818100_s3.jpg"
+                            alt="">
+                    </div>
+                    <div id="description">
+                        <h3 style="font-size: 16px;" >TRÅDFRI</h3>
+                        <p style="line-height:0%;">shortcut button</p>
+                        <span id="singlePrice" style="font-size: 16px;font-weight: bold;">Rs. 599.00</span>
+                        <br>
+                        
+                        <p style="font-size: 16px;">white</p>
+                        <p style="line-height: 0%;color: #767676;">Article no : 105.179.03</p>
+                    </div>
+                </div>
+            </div>
+           
+            <div id="totalPrice">
+                <div id="displayFlex">
+                    <div>Total</div>
+                    <div style="font-weight: bold;">Rs. 599.00</div>
+                </div>
+                <div id="buttonDiv">
+                    <button id="removeButton"><img style="width:20px ;height:15px; " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNE5A3JKIvFuip9WD1AWwT62gfQlHpCDGTLA&usqp=CAU" alt="">Remove</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="totalCartAmount">
+            <hr>
+            <div>
+                <div><strong>Total amount:</strong></div>
+                <div><strong>Rs. 1,598.00</strong></div>
+            </div>
+            
+        </div>
+        <div id="cardAccepted">
+            <div>
+                <p>All prices are inclusive of taxes</p>
+            </div>
+            
+            <div id="displayGrid">
+                <div>
+                    <img src="https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/visa.png" alt="">
+                </div>
+                <div>
+                    <img src="https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/master_card.png" alt="">
+                </div>
+                <div>
+                    <img src="https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/maestro.png" alt="">
+                </div>
+                <div>
+                    <img src="	https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/rupay.png" alt="">
+                </div>
+                <div>
+                    <img src="https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/upi.png" alt="">
+                </div>
+                <div>
+                    <img src="	https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/eWallet.png" alt="">
+                </div>
+                <div>
+                    <img src="https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/axp.png" alt="">
+                </div>
+                <div>
+                    <img src="https://s3-eu-west-1.amazonaws.com/cncdeploy/images/in/diners.png" alt="">
+                </div>
+            </div>
+            <div id="buttons">
+                <div>
+                    <button id="placeOrder" style="padding: 4px;">Edit Order</button>
+                </div>
+                <div>
+                    <button id="placeOrder">Palce Order</button>
+                </div>
+                
+            </div>
+            
+
+        </div>
+<hr>
+        <div id="services">
+            <div class="innerDiv">
+                <div>
+                    <img src="https://www.ikea.com/images/delivery-2c377c3cc69640f749013836110d40ad.jpg">
+                </div>
+                <div class="policyDiv">
+                    <div>
+                        <b>Our Delivery Service</b>
+                        <br>
+                        Safe & contact-less delivery according to government permission.
+                    </div>
+                    <div>
+                        <a href="#">More info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="innerDiv">
+                <div>
+                    <img src="https://www.ikea.com/images/delivery-014ad6216fa3d6d633f4be02a031b03b.jpg">
+                </div>
+                <div class="policyDiv">
+                    <div>
+                        <b>Our Return Policy</b>
+                        <br>
+                        We have made some updates to our return policy due to the COVID 19 situation.
+                    </div>
+                    <div>
+                        <a href="#">More info</a>
+                    </div>
+                </div>
+        
+        
+            </div>
+            <div class="innerDiv">
+                <div>
+                    <img src="https://www.ikea.com/images/service-be6f35e18f0f32db81888e1f8c2bc401.jpg">
+                </div>
+                <div class="policyDiv">
+                    <div>
+                        <b>Our Assembly Service</b>
+                        <br>
+                        Sometimes it is nice to have someone else assemble it for you.
+                    </div>
+                    <div>
+                        <a href="#">More info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

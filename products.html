@@ -63,8 +63,10 @@
 
   }
   #slide1>div,#slide2>div{
-    width: 23%;
-    margin: .5%;
+    width: 22%; 
+    margin: 1%;
+    
+    
   }
 
   .pimg {
@@ -165,6 +167,39 @@
     width:46%;
     margin: 1%git;
   }
+  
+
+/* CSS */
+.button-32 {
+  background-color: #fff000;
+  border-radius: 12px;
+  color:black;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
 </style>
 
 <body>
@@ -203,7 +238,8 @@
 
   <div id="slide">
 
-    <div class="slideshow-container">
+    <div  id="slideshow-container"
+    class="slideshow-container">
 
       <!-- Full-width images with number and caption text -->
       <div  class="mySlides fade">
@@ -230,7 +266,9 @@
       <span class="dot" onclick="currentSlide(2)"></span>
       <!-- <span class="dot" onclick="currentSlide(3)"></span> -->
     </div>
-
+</div>
+    <div></div>
+    <button onclick="order()" style="width: 50%;margin-left:25%" class="button-32">Place Order</button>
 <h1>
   Bedroom at our lowest price
 
@@ -241,7 +279,7 @@
 </div>
 
 
-  </div>
+  
 </body>
 <script>
   let slideIndex = 1;
@@ -304,6 +342,12 @@
 
 
 
+    // eventdeligation
+    var cart,x
+    if(JSON.parse(localStorage.getItem("cart"))==null)
+     cart=[]
+     else
+     cart=JSON.parse(localStorage.getItem("cart"))
 
     function display(x) {
       x.forEach((e, i) => {
@@ -312,8 +356,32 @@
         div.innerHTML = `<img  class ="pimg"src="${e.url}" alt="">
     <h1 style="text-align:center;">${e.n}</h1>
     <p style="text-align:center;">${e.in}</p>
-    <h2 style="text-align:center;">${e.rs}</h2>`
-        if (i < 4) {
+    <h2 class='button-32'>Rs.${e.rs}</h2>`
+      
+    button= document.createElement('button')
+    button.className="button-32"
+    button.innerHTML=`Add to cart`
+    button.addEventListener('click',()=>{
+      // console.log(e.path[1].children[1].innerHTML)
+      var obj={
+        n:e.n,
+        rs:e.rs,
+        url:e.url
+
+      }
+      // console.log(obj.rs.includes('Rs'))
+      console.log(obj)
+      // if(!obj.rs.includes('Class')){
+      cart.push(obj)
+      
+      
+       localStorage.setItem("cart",JSON.stringify(cart))
+
+      // }
+    })
+    
+    div.appendChild(button)
+    if (i < 4) {
 
           document.getElementById('slide1').appendChild(div)
         } else if (i < 8) {
@@ -322,6 +390,41 @@
 
       })
     }
+
+
+
+    // document.getElementById('slide').addEventListener('click',(e)=>{
+    //   // console.log(e.path[1].children[1].innerHTML)
+    //   var obj={
+    //     n:e.path[1].children[1].innerHTML,
+    //     rs:e.path[1].children[3].innerHTML,
+    //     url:e.path[1].children[0].src,
+
+    //   }
+    //   console.log(obj.rs.includes('Rs'))
+    //   console.log(obj.length)
+    //   if(!obj.rs.includes('Class')){
+    //   cart.push(obj)
+      
+      
+    //    localStorage.setItem("cart",JSON.stringify(cart))
+
+    //   }
+    // })
+    
+     function order(){
+      console.log(cart)
+    x={
+     "cart":cart
+   }
+    var update= fetch('http://localhost:3000/users/1',{
+      method: "PATCH",
+                body: JSON.stringify(x),
+                headers: {
+                    'Content-Type': "application/json"
+                }
+    })
+  }
 </script>
 
 </html>
