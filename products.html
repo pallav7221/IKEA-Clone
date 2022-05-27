@@ -1,165 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
 </head>
 <style>
-    #a,.a{
-        margin-left: 5%;
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-    }
+  #a,
+  .a {
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #aa {
+    background-color: yellow;
+    padding: 5%;
+    width: 25%
+  }
+
+  #ab {
+    width: 65%;
+  }
+
+  #ab>img {
+    width: 100%;
+  }
+
+  #shopBY {
+    height: 35px;
+    background-color: black;
+    color: white;
+    border-radius: 15px 15px 15px 15px;
+  }
+
+  .b {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+
+  }
+
+  .b>div {
+    width: 45%;
+    margin: 2%;
+  }
+
+  .b>div>img {
+    width: 100%;
+    height: 90%;
+  }
+
+  #slide1,#slide2 {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
     
-    #aa{
-        background-color: yellow;
-        padding: 5%;
-        width: 25%
-    }
-    #ab{
-        width: 65%;
-    }
-    #ab>img{
-        width: 100%;
-    }
-    #shopBY{
-        height: 35px;
-        background-color: black;
-        color:white;
-        border-radius: 15px 15px 15px 15px;
-    }
-    .b{
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 5%;
 
-    }
-    .b>div{
-        width: 45%;
-        margin: 2%;
-    }
-    .b>div>img{
-        width: 100%;
-        height: 90%;
-    }
-    #slide>div{
-        width: 100%;
-        
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
+  }
+  #slide1>div,#slide2>div{
+    width: 23%;
+    margin: .5%;
+  }
 
-    }
-    .pimg{
-        
-        width: 100%;
-        height:inherit;
-        
+  .pimg {
+
+    width: 100%;
+    height: inherit;
 
 
-    }
-    #left{
-        margin-top: -100px;
+
+  }
+
+  
+  #slide>* {
+    box-sizing: border-box
+  } 
+
+  /* Slideshow container */
+  .slideshow-container {
+    /* max-width: 1000px; */
+    position: relative;
+    margin: auto;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
     position: absolute;
-        background-color:red;
-        color:white;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color:grey;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
     }
-    #right{
-        margin-top: -100px;
-        margin-left: 98%;
-    position: absolute;
-        background-color:red;
-        color:white;
+
+    to {
+      opacity: 1
     }
+  }
+  .c{
+    display: flex;
+    margin:5%;
+    flex-wrap:wrap;
+  }
+  .c>*{
+    width:46%;
+    margin: 1%git;
+  }
 </style>
-<body>
-    <h1 class="a">Our Lowest price</h1>
-    <div id="a"> <div id="ab">
 
-        <img src="https://www.ikea.com/images/11/b8/11b8ccb82cc4c8719d8818d4ea24602a.png?f=m" alt="">
+<body>
+  <h1 class="a">Our Lowest price</h1>
+  <div id="a">
+    <div id="ab">
+
+      <img src="https://www.ikea.com/images/11/b8/11b8ccb82cc4c8719d8818d4ea24602a.png?f=m" alt="">
     </div>
     <div id="aa">
-<h1>As simple as that</h1>
-<p>We think that everyone should be able to afford good home furnishings. When we design a product, we first create the price tag. This means that we always try to find the best materials and avoid waste during production. As simple as that
+      <h1>As simple as that</h1>
+      <p>We think that everyone should be able to afford good home furnishings. When we design a product, we first
+        create the price tag. This means that we always try to find the best materials and avoid waste during
+        production. As simple as that
 
-</p>
-<button id="shopBY"><strong>Shop by catagories</strong></button>
+      </p>
+      <button id="shopBY"><strong>Shop by catagories</strong></button>
     </div>
-    </div>
+  </div>
 
 
 
-    <h1 class="a">Storage and organisation
-    </h1>
-    <div class="b">
-        <div><img src="https://www.ikea.com/ext/ingkadam/m/488c739dcaa9185e/original/PH177262-crop001.jpg?f=m" alt=""></div>
+  <h1 class="a">Storage and organisation
+  </h1>
+  <div class="b">
+    <div><img src="https://www.ikea.com/ext/ingkadam/m/488c739dcaa9185e/original/PH177262-crop001.jpg?f=m" alt=""></div>
     <div><img src="https://www.ikea.com/ext/ingkadam/m/5a13dd680369f267/original/PH160919-crop001.jpg?f=m" alt=""></div>
-    </div>
-    <!-- coursoul -->
-    <div id="slide">
-        <div style="background-color:blue;" class="slide"></div>
-        <div style="background-color:pink;" class="slide"></div>
-        <!-- <div style="background-color: green;" class="slide"></div> -->
-      
-  <!-- <div style="background-color: black" class="slide"></div> -->
-  <button onclick="slide()" id="left">--</button>
-  <button onclick="slide()" id="right">++</button>
+  </div>
+  <!-- coursoul -->
+  
+  <img src="" alt="">
+  <h1 ></h1>
+  <p></p>
+  <h2></h2> -->
 
+
+  <div id="slide">
+
+    <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div  class="mySlides fade">
+        <div id="slide1"></div>
+      </div>
+      
+      <div  class="mySlides fade">
+        <div id="slide2">
+          
+        </div>
+       
+      </div>
+
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <img src="" alt="">
-    <h1></h1>
-    <p></p>
-    <h2></h2>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <!-- <span class="dot" onclick="currentSlide(3)"></span> -->
+    </div>
+
+<h1>
+  Bedroom at our lowest price
+
+</h1>
+<div class="c">
+  <img src="https://www.ikea.com/ext/ingkadam/m/3f6d5ade877a8d21/original/PH175835.jpg?f=m" alt="">
+  <img src="https://www.ikea.com/ext/ingkadam/m/728b2492be9c10a7/original/PH172220-crop001.jpg?f=m" alt="">
+</div>
+
+
+  </div>
 </body>
 <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+  }
     getproducts()
-    async function getproducts(){
-try{
-  await fetch('http://localhost:3000/slideproducts')
-.then((x) =>x.json())
-.then((x) =>display(x))
+    async function getproducts() {
+      try {
+        await fetch('http://localhost:3000/slideproducts')
+          .then((x) => x.json())
+          .then((x) => display(x))
 
 
-}
-catch(e){
-    console.log(e)
-}
-    }
-    slide()
-    var slideindex=0
-    var allslide= document.querySelectorAll('.slide')
-    function slide(){
-    allslide.forEach((x)=>{
-        x.style.display='none'
-    })
-    allslide[slideindex].style.display='block'
-    slideindex++
-    if(slideindex==allslide.length){
-        slideindex=0
-    }
+      }
+      catch (e) {
+        console.log(e)
+      }
     }
 
+    // var slideindex=0
+    // var allslide= document.querySelectorAll('.slide')
+    // function slide(){
+    // allslide.forEach((x,i)=>{
+    //     if(!i==slideindex)
+    //     {x.style.display='none'}
+    // })
+    // allslide[slideindex].style.display='block'
+    // slideindex++
+    // if(slideindex==allslide.length){
+    //     slideindex=0
+    // }
+    // }
 
 
 
-    function display(x){
-        x.forEach((e,i)=>{
-            div=document.createElement('div')
-div.className='cc'
-    div.innerHTML=`<img  class ="pimg"src="${e.url}" alt="">
-    <h1></h1>
-    <p></p>
-    <h2></h2>`
-    if(i<4){
 
-        allslide[0].append(div)
-    }else if(i<8){
-        allslide[1].append(div)
-    }
-   
-        })
+    function display(x) {
+      x.forEach((e, i) => {
+        div = document.createElement('div')
+        div.className = 'cc'
+        div.innerHTML = `<img  class ="pimg"src="${e.url}" alt="">
+    <h1 style="text-align:center;">${e.n}</h1>
+    <p style="text-align:center;">${e.in}</p>
+    <h2 style="text-align:center;">${e.rs}</h2>`
+        if (i < 4) {
+
+          document.getElementById('slide1').appendChild(div)
+        } else if (i < 8) {
+          document.getElementById('slide2').appendChild(div)
+        }
+
+      })
     }
 </script>
+
 </html>
